@@ -1,0 +1,189 @@
+# Python学习漫谈 {#intro}
+
+今天将带领大家简要了解Python，包括带大家安装（不在文件中，现场演示），以及和大家聊一聊学习的体悟与建议。
+
+## 来点整活
+
+### xkcd漫画
+
+xkcd：虽然不知道为什么，但是 Python 一行代码就上天了
+
+``` {.python}
+import antigravity #这行代码会带你到下面漫画的网页
+```
+
+![xkcd的Python漫画](image/python.png)
+
+### Python 之禅
+
+```{python}
+import this
+```
+
+### 更多整活推荐
+
+[Can Python Make You fly?](https://www.codementor.io/@satwikkansal/can-python-make-you-fly-fuolx8uxu)：一些Python有趣内容的搜集博客
+
+[WTF Python](https://github.com/leisurelicht/wtfpython-cn)：基于Python语法特性的趣味现象，有趣的同时还能提升大家的Python知识
+
+## 如何认识Python
+
+### 劝退提示
+
+常见的宣传学Python的论点，此处予以一一反思（感谢帮助我收集相关信息的朋友们）：
+
+-   必修课前抢跑一波：没有问题，祝大家卷的愉快<img src="https://s3.amazonaws.com/pix.iemoji.com/andr33/0453.png" alt="狗头" style="display: inline"/>
+-   新手友好：对于有其他程序语言基础的人，确实很友好；但是，请大家重视自己的探索能力，因为编程能力很多时候需要自己搜索拓展，不断练习，如果没有**使用需求**就来学Python，那么可能收获并不大。
+-   数据科学前沿：如果大家的应用偏向数据分析、统计经济、生物信息等，其实可以考虑一下 R 语言；Python的数据科学其实重点优势在于深度学习方向。
+-   爬虫：个人认为，把爬虫作为Python入门后进阶练习的，或多或少都应该对当前糟糕的大学生内卷生态负责。由于会一点点爬虫的人不少，所以常见网站好爬的都有相应攻略，大家都喜欢做B站、豆瓣数据分析；而实际上真正能落地或者有独特价值的爬虫有着不少的技术壁垒，所以学了这点爬虫只是加大课程作业内卷而已。
+-   炫酷：你看到的可能是Python的一些胶水应用，那种炫酷效果一般是前端网页、计算图形学之类的，内核不是Python，而是对效果的数学和计算机表达。要说真的炫酷，可以考虑一下了解codepen上面的优秀JavaScript作品。
+-   通用性：这是Python最大的优点，一般来说，用Python可以解决大部分的非计算机语言（C/CPP/JAVA）课程大作业需求，各种问题都比较容易搜索到解决方案，虽然 R 也可以操作，但是教程和操作方案相对少一些（对此感兴趣的欢迎关注[统计之都](https://d.cosx.org)）。
+
+### 真实体悟
+
+Python作为胶水语言来说，非常好用，因此对于大部分理科生都是值得学一下的，而且在有程序设计基础情况下，上手成本很低。
+
+不过同时提醒一下，对于学文科的同学来说，Python可能未必有你想象的那么值得。Python更多时候都是在通过搜索引擎和调包来使用，因此很容易半桶水，实际上我本人也是。
+
+## 两种文件与三种开发方式
+
+### 两种文件
+
+#### `.py`文件
+
+`.py`是Python语言的文件格式，可以直接在命令行运行整个文件，和组织成大项目、python包。
+
+#### `.ipynb`文件
+
+`.ipynb`是jupyter notebook的文件格式，包含Python代码、注释文本、以及过程中间输出的记录（因此有可能非常大）
+
+### 三种开发方式
+
+#### 方式1：以jupyter为代表的notebook形式编程
+
+主要提供者：
+
+1.  [jupyter notebook](https://jupyter.org/)（服务器和本地都可以）
+
+2.  [google colab](https://colab.research.google.com)（侧重谷歌服务和GPU支持）
+
+3.  [kaggle notebook](https://www.kaggle.com/code)（侧重数据科学比赛，包含GPU加速）
+
+4.  VScode有ipynb交互插件
+
+5.  其他在线notebook
+
+特点：
+
+1.  可以不安装配置环境，在浏览器学Python--这是一些卖课网站的卖点，会告诉你"不需要配环境，在线实训"
+
+2.  是浏览器，所以共用、交互比较自在，适合云服务的形式
+
+3.  内核还是某个python解释器（一般是ipython kernel）
+
+缺点：
+
+1.  写大段代码不够好（浏览器毕竟不是专门用来写代码的）
+
+2.  适合数据科学，但是不适合某些类型的项目（例如网站项目）
+
+#### 方式2：在编辑器写代码
+
+需要注意的是，实际上现在的代码编辑器和IDE没有绝对的界限，这里只是按照完备程度和重量级大致进行一下划分
+
+主要提供者：
+
+1.  [Visual Studio Code](https://code.visualstudio.com/)（简称VS code，注意一定要带code）
+
+2.  Sublime text
+
+3.  其他editor
+
+特点：
+
+1.  如果不安装环境，那就只能肉眼debug，所以还是需要配置环境的
+
+2.  轻量级，一般用插件来补充功能，自己按需搭配
+
+3.  本质上你只是在写代码的文字，执行和检验都是插件提供的，因此对于大型项目或者debug，**可能**会有所不足
+
+#### 方式3：在IDE（集成开发环境）写代码
+
+主要提供者：
+
+1.  [JetBrain Pycharm](https://www.jetbrains.com/pycharm/)（有免费和教育版）
+
+2.  Visual Studio（不带code，这是庞然大物，虽然可以，但是我没见过有人用他写Python）
+
+3.  Anaconda附赠一个[Spyder](https://www.spyder-ide.org/) 很简洁而且也好用
+
+特点：
+
+1.  一般是全套服务，有了一个IDE就可以解决这个语言相关的全流程开发
+
+2.  比较重量级（Spyder相对比较轻，185M，但是我把他当anaconda赠品，conda本身已经重量级了）
+
+## 课程安装与使用简介
+
+### 安装
+
+anaconda国内可以从清华的[软件源](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)下载，最新版当前是2021.11.
+
+根据系统情况选择对应的安装包，Windows现在的电脑基本上都是64位，选Anaconda3-2021.11-Windows-x86_64.exe。
+
+注意事项：软件的安装位置最好别在C，因为约3G有点大。其他内容按照默认即可。
+
+### 换源加速
+
+#### conda换源加速：
+
+完整介绍见这里：<https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/>
+
+    conda clean -i 去掉之前的源
+
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+    特殊的源（完整版见官网，forge比较常见，Pytorch深度学习要用）
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ 
+
+    conda config --set show_channel_urls yes 有了这个就可以找到.condarc文件，可以直接替换操作
+
+> 注：软件增加后，solving environment还是会慢，因为conda会试图调和所有环境依赖项。
+
+#### pip也可以换源加速：
+
+    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PACKAGE
+
+这里通过`-i`可以临时指定用国内清华镜像。（永久修改比较麻烦，且比较小的包PYPI其实不慢，相比conda好得多）
+
+### 其他注意事项
+
+尽量不要使用anaconda navigator，打开时间慢到离谱
+
+## 资源与信息的获取途径
+
+Python社区很广，学不完的，所以请按需学习，掌握搜索技巧
+
+### 搜索技巧
+
+推荐使用[bing](https://cn.bing.com/?mkt=zh-CN)
+
+简单的高级搜索技巧：`xxx -csdn`
+
+### 论坛与博客
+
+博客推荐：Stack Overflow
+
+教程推荐：菜鸟教程Python3
+
+英文**看得懂**（不是英语好）很重要--**适当**合理使用文档
+
+### 拓展方式
+
+1.  kaggle[学习](https://www.kaggle.com/learn)与比赛
+2.  刷LeetCode等代码练习网站
+3.  写个人博客之类的，整理学习所得并输出
